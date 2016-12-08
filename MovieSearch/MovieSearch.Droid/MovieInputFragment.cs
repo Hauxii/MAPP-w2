@@ -56,6 +56,7 @@ namespace MovieSearch.Droid
             _searchButton.Click += async (sender, e) =>
             {
                 _searchButton.Visibility = ViewStates.Gone;
+                _searchButton.Enabled = false;
                 _loading.Visibility = ViewStates.Visible;
 
                 var manager = (InputMethodManager)this.Context.GetSystemService(Context.InputMethodService);
@@ -66,6 +67,9 @@ namespace MovieSearch.Droid
                 var intent = new Intent(this.Context, typeof(MovieListActivity));
                 intent.PutExtra("movieList", JsonConvert.SerializeObject(this._movies.MovieList));
                 this.StartActivity(intent);
+                _searchButton.Visibility = ViewStates.Visible;
+                _searchButton.Enabled = true;
+                _loading.Visibility = ViewStates.Gone;
 
             };
 

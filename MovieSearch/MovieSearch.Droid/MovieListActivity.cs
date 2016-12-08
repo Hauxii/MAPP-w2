@@ -9,27 +9,32 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Newtonsoft.Json;
-using MovieSearch.Model;
 
 namespace MovieSearch.Droid
 {
-    [Activity(Theme = "@style/MyTheme", Label = "Movie list")]
-	//ListActivity is similar to TableViewController in ios
-    public class MovieListActivity : ListActivity
+    using MovieSearch.Model;
+
+    using Newtonsoft.Json;
+
+    [Activity(Theme = "@style/MyTheme", Label = "Name list")]
+    public class MovieListActivity : Activity
     {
-		protected override void OnCreate(Bundle savedInstanceState)
-		{
-			base.OnCreate(savedInstanceState);
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
 
-			//ask the intent object to extract the list that the previous activity sentt
-			var jsonString = this.Intent.GetStringExtra("movieList");
+            // Set our view from the "main" layout resource
+            this.SetContentView(Resource.Layout.MovieList);
 
-			//Deserialize the json string into the movieList object
-			var movieList = JsonConvert.DeserializeObject<List<Movie>>(jsonString);
+            var jsonStr = this.Intent.GetStringExtra("movieList");
+            var movieList = JsonConvert.DeserializeObject<List<Movie>>(jsonStr);
 
-			//Create a new adapter that will accept the movieList and try to display it)
-			this.ListAdapter = new MovieListAdapter(this, movieList);
+            var listview = this.FindViewById<ListView>(Resource.Id.movielistview);
+            listview.Adapter = new MovieListAdapter(this, movieList);
+
+            var toolbar = this.FindViewById<Toolbar>(Resource.Id.toolbar);
+            this.SetActionBar(toolbar);
+            this.ActionBar.Title = "List of Movies";
         }
     }
 }

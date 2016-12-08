@@ -48,7 +48,8 @@ namespace MovieSearch.Droid
 			foreach (var m in res.Results)
 			{
 				ApiQueryResponse<MovieCredit> movieCreditsResponse = await _movieApi.GetCreditsAsync(m.Id);
-
+                
+                /* Switched to PICASSO
 				var localFilePath = _imageDl.LocalPathForFilename(m.PosterPath);
 				if (localFilePath != string.Empty)
 				{
@@ -59,6 +60,7 @@ namespace MovieSearch.Droid
 				}
 
 				m.PosterPath = localFilePath;
+                */
 				movies.ExtractInfo(m, movieCreditsResponse);
 			}
 			return;

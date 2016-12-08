@@ -6,6 +6,7 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using Java.IO;
+using Square.Picasso;
 using Movie = MovieSearch.Model.Movie;
 
 namespace MovieSearch.Droid
@@ -16,7 +17,9 @@ namespace MovieSearch.Droid
 
 		private List<Model.Movie> _movieList;
 
-		public MovieListAdapter(MovieListActivity context, List<Movie> movieList)
+        private readonly string ImageUrl = "http://image.tmdb.org/t/p/w92";
+
+        public MovieListAdapter(Activity context, List<Movie> movieList)
 		{
 			this._context = context;
 			this._movieList = movieList;
@@ -61,12 +64,21 @@ namespace MovieSearch.Droid
             }
             view.FindViewById<TextView>(Resource.Id.cast).Text = castLabel;
 
+            /* Switched to Picasso
 		    if (movie.Poster != null)
 		    {
                 var file = new File(movie.Poster);
 		        var bmimg = BitmapFactory.DecodeFile(file.AbsolutePath);
                 view.FindViewById<ImageView>(Resource.Id.poster).SetImageBitmap(bmimg);
             }
+            */
+		    if (!string.IsNullOrEmpty(movie.Poster))
+		    {
+		        var im = ImageUrl + movie.Poster;
+		        Picasso.With(_context).Load(im).Into(view.FindViewById<ImageView>(Resource.Id.poster));
+		    }
+		    
+
             return view;
 		}
 	}
