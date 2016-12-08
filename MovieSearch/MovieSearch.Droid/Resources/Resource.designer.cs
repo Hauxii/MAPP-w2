@@ -2002,8 +2002,8 @@ namespace MovieSearch.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060082
-			public const int action0 = 2131099778;
+			// aapt resource value: 0x7f060081
+			public const int action0 = 2131099777;
 			
 			// aapt resource value: 0x7f06005e
 			public const int action_bar = 2131099742;
@@ -2029,8 +2029,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06005f
 			public const int action_context_bar = 2131099743;
 			
-			// aapt resource value: 0x7f060086
-			public const int action_divider = 2131099782;
+			// aapt resource value: 0x7f060085
+			public const int action_divider = 2131099781;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -2074,11 +2074,11 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060047
 			public const int buttonPanel = 2131099719;
 			
-			// aapt resource value: 0x7f060083
-			public const int cancel_action = 2131099779;
+			// aapt resource value: 0x7f060082
+			public const int cancel_action = 2131099778;
 			
-			// aapt resource value: 0x7f060080
-			public const int cast = 2131099776;
+			// aapt resource value: 0x7f06007f
+			public const int cast = 2131099775;
 			
 			// aapt resource value: 0x7f06002c
 			public const int center = 2131099692;
@@ -2092,8 +2092,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060055
 			public const int checkbox = 2131099733;
 			
-			// aapt resource value: 0x7f060089
-			public const int chronometer = 2131099785;
+			// aapt resource value: 0x7f060088
+			public const int chronometer = 2131099784;
 			
 			// aapt resource value: 0x7f060035
 			public const int clip_horizontal = 2131099701;
@@ -2143,8 +2143,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06001d
 			public const int end = 2131099677;
 			
-			// aapt resource value: 0x7f06008e
-			public const int end_padder = 2131099790;
+			// aapt resource value: 0x7f06008d
+			public const int end_padder = 2131099789;
 			
 			// aapt resource value: 0x7f060026
 			public const int enterAlways = 2131099686;
@@ -2188,8 +2188,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060042
 			public const int image = 2131099714;
 			
-			// aapt resource value: 0x7f06008d
-			public const int info = 2131099789;
+			// aapt resource value: 0x7f06008c
+			public const int info = 2131099788;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
@@ -2197,14 +2197,14 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060030
 			public const int left = 2131099696;
 			
-			// aapt resource value: 0x7f060087
-			public const int line1 = 2131099783;
+			// aapt resource value: 0x7f060086
+			public const int line1 = 2131099782;
 			
-			// aapt resource value: 0x7f06008b
-			public const int line3 = 2131099787;
+			// aapt resource value: 0x7f06008a
+			public const int line3 = 2131099786;
 			
-			// aapt resource value: 0x7f06007f
-			public const int listItem = 2131099775;
+			// aapt resource value: 0x7f06007e
+			public const int listItem = 2131099774;
 			
 			// aapt resource value: 0x7f06000b
 			public const int listMode = 2131099659;
@@ -2212,11 +2212,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060044
 			public const int list_item = 2131099716;
 			
-			// aapt resource value: 0x7f060077
-			public const int main_content = 2131099767;
-			
-			// aapt resource value: 0x7f060085
-			public const int media_actions = 2131099781;
+			// aapt resource value: 0x7f060084
+			public const int media_actions = 2131099780;
 			
 			// aapt resource value: 0x7f06001e
 			public const int middle = 2131099678;
@@ -2224,11 +2221,11 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06003a
 			public const int mini = 2131099706;
 			
-			// aapt resource value: 0x7f06007b
-			public const int movieEditText = 2131099771;
-			
 			// aapt resource value: 0x7f06007a
-			public const int movieTextView = 2131099770;
+			public const int movieEditText = 2131099770;
+			
+			// aapt resource value: 0x7f060079
+			public const int movieTextView = 2131099769;
 			
 			// aapt resource value: 0x7f060016
 			public const int multiply = 2131099670;
@@ -2254,11 +2251,11 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060034
 			public const int pin = 2131099700;
 			
-			// aapt resource value: 0x7f060081
-			public const int poster = 2131099777;
+			// aapt resource value: 0x7f060080
+			public const int poster = 2131099776;
 			
-			// aapt resource value: 0x7f06007d
-			public const int progressBar1 = 2131099773;
+			// aapt resource value: 0x7f06007c
+			public const int progressBar1 = 2131099772;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -2269,8 +2266,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060057
 			public const int radio = 2131099735;
 			
-			// aapt resource value: 0x7f06007e
-			public const int resultTextView = 2131099774;
+			// aapt resource value: 0x7f06007d
+			public const int resultTextView = 2131099773;
 			
 			// aapt resource value: 0x7f060031
 			public const int right = 2131099697;
@@ -2293,8 +2290,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06003c
 			public const int scrollable = 2131099708;
 			
-			// aapt resource value: 0x7f06007c
-			public const int searchButton = 2131099772;
+			// aapt resource value: 0x7f06007b
+			public const int searchButton = 2131099771;
 			
 			// aapt resource value: 0x7f060062
 			public const int search_badge = 2131099746;
@@ -2341,8 +2338,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060013
 			public const int showTitle = 2131099667;
 			
-			// aapt resource value: 0x7f060078
-			public const int sliding_tabs = 2131099768;
+			// aapt resource value: 0x7f06008e
+			public const int sliding_tabs = 2131099790;
 			
 			// aapt resource value: 0x7f060070
 			public const int snackbar_action = 2131099760;
@@ -2371,8 +2368,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060032
 			public const int start = 2131099698;
 			
-			// aapt resource value: 0x7f060084
-			public const int status_bar_latest_event_content = 2131099780;
+			// aapt resource value: 0x7f060083
+			public const int status_bar_latest_event_content = 2131099779;
 			
 			// aapt resource value: 0x7f060058
 			public const int submenuarrow = 2131099736;
@@ -2383,11 +2380,14 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06000d
 			public const int tabMode = 2131099661;
 			
-			// aapt resource value: 0x7f06008c
-			public const int text = 2131099788;
+			// aapt resource value: 0x7f060078
+			public const int tabbar = 2131099768;
 			
-			// aapt resource value: 0x7f06008a
-			public const int text2 = 2131099786;
+			// aapt resource value: 0x7f06008b
+			public const int text = 2131099787;
+			
+			// aapt resource value: 0x7f060089
+			public const int text2 = 2131099785;
 			
 			// aapt resource value: 0x7f060050
 			public const int textSpacerNoButtons = 2131099728;
@@ -2395,8 +2395,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f060076
 			public const int text_input_password_toggle = 2131099766;
 			
-			// aapt resource value: 0x7f060088
-			public const int time = 2131099784;
+			// aapt resource value: 0x7f060087
+			public const int time = 2131099783;
 			
 			// aapt resource value: 0x7f060046
 			public const int title = 2131099718;
@@ -2404,8 +2404,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06004b
 			public const int title_template = 2131099723;
 			
-			// aapt resource value: 0x7f06008f
-			public const int toolbar = 2131099791;
+			// aapt resource value: 0x7f060077
+			public const int toolbar = 2131099767;
 			
 			// aapt resource value: 0x7f060025
 			public const int top = 2131099685;
@@ -2425,8 +2425,8 @@ namespace MovieSearch.Droid
 			// aapt resource value: 0x7f06000a
 			public const int view_offset_helper = 2131099658;
 			
-			// aapt resource value: 0x7f060079
-			public const int viewpager = 2131099769;
+			// aapt resource value: 0x7f06008f
+			public const int viewpager = 2131099791;
 			
 			// aapt resource value: 0x7f060023
 			public const int withText = 2131099683;
@@ -2644,7 +2644,10 @@ namespace MovieSearch.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int toolbar = 2130903094;
+			public const int tabbar = 2130903094;
+			
+			// aapt resource value: 0x7f030037
+			public const int toolbar = 2130903095;
 			
 			static Layout()
 			{

@@ -100,6 +100,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="MovieListAdapter.cs" />
     <Compile Include="TabsFragmentPagerAdapter.cs" />
+    <Compile Include="ToolbarTabs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -127,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\tabbar.xml" />
   </ItemGroup>
   <Import Project="..\..\MovieDownload\MovieDownload.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
