@@ -51,7 +51,9 @@ namespace MovieSearch.Droid
 			{
 				view = this._context.LayoutInflater.Inflate(Resource.Layout.MovieListItem, null);
 			}
+
 			var movie = this._movieList[position];
+
 		    view.FindViewById<TextView>(Resource.Id.title).Text = movie.Title;
 		    var castLabel = "";
             for (var i = 0; i < movie.Cast.Count; i++)

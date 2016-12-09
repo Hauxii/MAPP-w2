@@ -20,7 +20,6 @@ namespace MovieSearch.Droid
 
 			this.StartActivity(typeof(MainActivity));
 			this.Finish();
-			// Create your application here
 		}
 	}
 }

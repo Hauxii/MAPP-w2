@@ -37,15 +37,9 @@ namespace MovieSearch.Droid
             _rootView = inflater.Inflate(Resource.Layout.TopRated, container, false);
             this._movieResourceProvider = new MovieResourceProvider();
 
-
-
-
             // Get our UI controls from the loaded layout
             _loading = this._rootView.FindViewById<ProgressBar>(Resource.Id.progressBar2);
             _loading.Visibility = ViewStates.Visible;
-
-            
-
 
             return _rootView;
         }
