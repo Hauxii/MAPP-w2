@@ -41,41 +41,50 @@ namespace MovieSearch.Droid
 			return;
 		}
 
+        //We sincerely apologies for the disgusting code here below, but this was the only solution in figuring out the random nullpointer-exceptions
 		private async Task populateInfoHelper(Movies movies, ApiSearchResponse<MovieInfo> res)
 		{
-			movies.ClearList();
-		    if (res == null)
+		    if (movies == null)
 		    {
-                Console.WriteLine("RES IS NULL!!!!!!!!!!!!");
-		    }
+                Console.WriteLine("MOVIEINFORESPONSE IS NULL!!!!!!!!!!!!");
+            }
 		    else
 		    {
-                if (res.Results == null)
+                movies.ClearList();
+                if (res == null)
                 {
-                    Console.WriteLine("RES.RESULT IS NULL!!!!!!!!!");
+                    Console.WriteLine("RES IS NULL!!!!!!!!!!!!");
                 }
                 else
                 {
-                    foreach (var m in res.Results)
+                    if (res.Results == null)
                     {
-                        if (m == null)
+                        Console.WriteLine("RES.RESULT IS NULL!!!!!!!!!");
+                    }
+                    else
+                    {
+                        foreach (var m in res.Results)
                         {
-                            Console.WriteLine("M IS NULL!!!!!!!!");
-                        }
-                        else
-                        {
-                            ApiQueryResponse<MovieCredit> movieCreditsResponse = await _movieApi.GetCreditsAsync(m.Id);
-                            if (movieCreditsResponse == null)
+                            if (m == null)
                             {
-                                Console.WriteLine("MOVIECREDITSINFO IS NULL!!!!!!!");
+                                Console.WriteLine("M IS NULL!!!!!!!!");
                             }
                             else
                             {
-                                movies.ExtractInfo(m, movieCreditsResponse);
+                                ApiQueryResponse<MovieCredit> movieCreditsResponse = await _movieApi.GetCreditsAsync(m.Id);
+                                if (movieCreditsResponse == null)
+                                {
+                                    Console.WriteLine("MOVIECREDITSINFO IS NULL!!!!!!!");
+                                }
+                                else
+                                {
+                                    movies.ExtractInfo(m, movieCreditsResponse);
+                                }
                             }
+
                         }
-                        
                     }
+			
                 
                     /* Switched to PICASSO
                     var localFilePath = _imageDl.LocalPathForFilename(m.PosterPath);
