@@ -17,7 +17,7 @@ namespace MovieSearch.Droid
 
     using Newtonsoft.Json;
 
-    public class NameInputFragment : Fragment
+    public class MovieInputFragment : Fragment
     {
         private Movies _movies;
         private MovieResourceProvider _movieResourceProvider;
@@ -38,12 +38,7 @@ namespace MovieSearch.Droid
             // Use this to return your custom view for this Fragment
             var rootView = inflater.Inflate(Resource.Layout.MovieInput, container, false);
 
-            this._movies = new Movies();
             this._movieResourceProvider = new MovieResourceProvider();
-
-            MovieDbFactory.RegisterSettings(new DBSettings());
-            var movieApi = MovieDbFactory.Create<IApiMovieRequest>().Value;
-
 
             // Get our UI controls from the loaded layout
             var movieEditText = rootView.FindViewById<EditText>(Resource.Id.movieEditText);

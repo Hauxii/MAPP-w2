@@ -25,6 +25,7 @@ namespace MovieSearch.Droid
         {
             base.OnCreate(savedInstanceState);
             this._movies = new Movies();
+            this._movieResourceProvider = new MovieResourceProvider();
 
             // Create your fragment here
 
@@ -35,17 +36,19 @@ namespace MovieSearch.Droid
             
             // Use this to return your custom view for this Fragment
             _rootView = inflater.Inflate(Resource.Layout.TopRated, container, false);
-            this._movieResourceProvider = new MovieResourceProvider();
+            
 
             // Get our UI controls from the loaded layout
             _loading = this._rootView.FindViewById<ProgressBar>(Resource.Id.progressBar2);
-            _loading.Visibility = ViewStates.Visible;
+            
 
             return _rootView;
         }
 
         public async Task FetchTopRatedMovies()
         {
+            this._movies.MovieList.Clear();
+            _loading.Visibility = ViewStates.Visible;
             await this._movieResourceProvider.GetTopRated(this._movies);
             _loading.Visibility = ViewStates.Gone;
 

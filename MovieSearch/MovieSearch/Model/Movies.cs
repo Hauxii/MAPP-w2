@@ -35,23 +35,39 @@ namespace MovieSearch.Model
 
 			List<string> cast = new List<string>();
 			List<string> genre = new List<string>();
-
+            
 		    if (response.Item.CastMembers != null)
 		    {
                 for (int i = 0; i < response.Item.CastMembers.Count && i < 3; i++)
                 {
-                    cast.Add(response.Item.CastMembers[i].Name);
+                    if (response.Item.CastMembers[i] != null && response.Item.CastMembers[i].Name != null)
+                    {
+                        cast.Add(response.Item.CastMembers[i].Name);
+                    }
+                    else
+                    {
+                        cast.Add("");
+                    }
+                    
                 }
             }
 			
 
 			foreach (var g in movieInfo.Genres)
 			{
-				genre.Add(g.Name);
-			}
+			    if (g != null && g.Name != null)
+			    {
+                    genre.Add(g.Name);
+                }
+                else
+                {
+                    genre.Add("");
+                }
+            }
 
-
-			Movie newMovie = new Movie()
+            nullChecker(movieInfo);
+            
+            Movie newMovie = new Movie()
 			{
 				ID = movieInfo.Id,
 				Title = movieInfo.Title,
@@ -63,13 +79,21 @@ namespace MovieSearch.Model
 			};
 
 			AddMovie(newMovie);
+            
+        }
 
-		}
-
-		public void ExtractDetailedInfo(ApiQueryResponse<Movie> response)
+        private void nullChecker(MovieInfo movie)
 		{
-			 
-		}
+            if (movie.Title == null)
+            {
+                movie.Title = "";
+            }
+            if (movie.Overview == null)
+            {
+                movie.Overview = "";
+            }
+
+        }
 
 
 		//Getter

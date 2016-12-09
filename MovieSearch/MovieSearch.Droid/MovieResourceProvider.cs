@@ -44,25 +44,55 @@ namespace MovieSearch.Droid
 		private async Task populateInfoHelper(Movies movies, ApiSearchResponse<MovieInfo> res)
 		{
 			movies.ClearList();
-
-			foreach (var m in res.Results)
-			{
-				ApiQueryResponse<MovieCredit> movieCreditsResponse = await _movieApi.GetCreditsAsync(m.Id);
+		    if (res == null)
+		    {
+                Console.WriteLine("RES IS NULL!!!!!!!!!!!!");
+		    }
+		    else
+		    {
+                if (res.Results == null)
+                {
+                    Console.WriteLine("RES.RESULT IS NULL!!!!!!!!!");
+                }
+                else
+                {
+                    foreach (var m in res.Results)
+                    {
+                        if (m == null)
+                        {
+                            Console.WriteLine("M IS NULL!!!!!!!!");
+                        }
+                        else
+                        {
+                            ApiQueryResponse<MovieCredit> movieCreditsResponse = await _movieApi.GetCreditsAsync(m.Id);
+                            if (movieCreditsResponse == null)
+                            {
+                                Console.WriteLine("MOVIECREDITSINFO IS NULL!!!!!!!");
+                            }
+                            else
+                            {
+                                movies.ExtractInfo(m, movieCreditsResponse);
+                            }
+                        }
+                        
+                    }
                 
-                /* Switched to PICASSO
-				var localFilePath = _imageDl.LocalPathForFilename(m.PosterPath);
-				if (localFilePath != string.Empty)
-				{
-					if (!File.Exists(localFilePath))
-					{
-						await _imageDl.DownloadImage(m.PosterPath, localFilePath, CancellationToken.None);
-					}
-				}
+                    /* Switched to PICASSO
+                    var localFilePath = _imageDl.LocalPathForFilename(m.PosterPath);
+                    if (localFilePath != string.Empty)
+                    {
+                        if (!File.Exists(localFilePath))
+                        {
+                            await _imageDl.DownloadImage(m.PosterPath, localFilePath, CancellationToken.None);
+                        }
+                    }
 
-				m.PosterPath = localFilePath;
-                */
-				movies.ExtractInfo(m, movieCreditsResponse);
-			}
+                    m.PosterPath = localFilePath;
+                    */
+                    
+                }
+            }
+			
 			return;
 		}
 

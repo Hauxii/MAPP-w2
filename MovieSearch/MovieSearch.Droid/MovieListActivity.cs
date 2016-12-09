@@ -19,6 +19,7 @@ namespace MovieSearch.Droid
     [Activity(Theme = "@style/MyTheme", Label = "Name list")]
     public class MovieListActivity : Activity
     {
+        private List<Movie> _movielList;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,10 +28,10 @@ namespace MovieSearch.Droid
             this.SetContentView(Resource.Layout.MovieList);
 
             var jsonStr = this.Intent.GetStringExtra("movieList");
-            var movieList = JsonConvert.DeserializeObject<List<Movie>>(jsonStr);
+            _movielList = JsonConvert.DeserializeObject<List<Movie>>(jsonStr);
 
             var listview = this.FindViewById<ListView>(Resource.Id.movielistview);
-            listview.Adapter = new MovieListAdapter(this, movieList);
+            listview.Adapter = new MovieListAdapter(this, _movielList);
 
             var toolbar = this.FindViewById<Toolbar>(Resource.Id.toolbar);
             this.SetActionBar(toolbar);

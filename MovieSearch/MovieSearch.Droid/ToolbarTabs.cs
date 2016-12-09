@@ -26,7 +26,7 @@ namespace MovieSearch.Droid
 
             var fragments = new Fragment[]
                                 {
-                                    new NameInputFragment(),
+                                    new MovieInputFragment(),
                                     _topRatedFragment
                                 };
             var titles = CharSequence.ArrayFromStringArray(new[]
@@ -40,8 +40,8 @@ namespace MovieSearch.Droid
 
             // Give the TabLayout the ViewPager
             var tabLayout = activity.FindViewById<TabLayout>(Resource.Id.sliding_tabs);
-                tabLayout.SetupWithViewPager(viewPager);
-                tabLayout.TabSelected += async (sender, args) =>
+            tabLayout.SetupWithViewPager(viewPager);
+            tabLayout.TabSelected += async (sender, args) =>
                 {
                     var tab = args.Tab;
                     if (tab.Position == 1)
@@ -49,7 +49,6 @@ namespace MovieSearch.Droid
                         await _topRatedFragment.FetchTopRatedMovies();
                     }
                 };
-
             SetToolbar(activity, toolbar);
         }
 
